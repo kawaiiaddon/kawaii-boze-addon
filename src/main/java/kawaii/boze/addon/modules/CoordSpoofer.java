@@ -3,8 +3,6 @@ package kawaii.boze.addon.modules;
 import dev.boze.api.addon.AddonModule;
 import dev.boze.api.option.ModeOption;
 import dev.boze.api.option.SliderOption;
-import net.minecraft.util.RandomSource;
-
 
 public class CoordSpoofer extends AddonModule {
 
@@ -20,5 +18,19 @@ public class CoordSpoofer extends AddonModule {
 
     public CoordSpoofer() {
         super("coord-spoofer", "Spoofs coordinates in the debug screen.");
+    }
+
+    public boolean isModuleEnabled = false;
+
+    @Override
+    public void onEnable() {
+        super.onEnable();
+        isModuleEnabled = true;
+    }
+
+    @Override
+    public void onDisable() {
+        super.onDisable();
+        isModuleEnabled = false;
     }
 }

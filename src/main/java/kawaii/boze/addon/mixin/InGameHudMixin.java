@@ -13,9 +13,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class InGameHudMixin {
 
     @Inject(method = "setOverlayMessage", at = @At("HEAD"), cancellable = true)
-    private void kawaii$filterActionBar(Component message, boolean tinted, CallbackInfo ci) {
-        ActionBarCensor module =  KawaiiAddon.action; //todo: add check if it's enabled
-        if (module != null && module.shouldHide(message.getString())) {
+    private void kawaii$filterActionBar(Component string, boolean animate, CallbackInfo ci) {
+        ActionBarCensor module =  KawaiiAddon.action;
+        if (module != null && module.shouldHide(string.getString())) {
             ci.cancel();
         }
     }

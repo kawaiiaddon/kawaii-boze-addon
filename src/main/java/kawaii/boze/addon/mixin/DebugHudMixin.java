@@ -21,7 +21,7 @@ public class DebugHudMixin {
 
     @Unique
     private float spoof(float num, float multiplier) {
-        CoordSpoofer mod = KawaiiAddon.spoofer; //todo: add check if it's enabled
+        CoordSpoofer mod = KawaiiAddon.spoofer;
 
         if (mod == null) return num;
 
@@ -46,7 +46,7 @@ public class DebugHudMixin {
     private void spoofCoordLines(GuiGraphicsExtractor graphics, List<String> lines, boolean alignLeft, CallbackInfo ci) {
         CoordSpoofer mod = KawaiiAddon.spoofer;
 
-        if (mod == null) return;
+        if (mod == null || !mod.isModuleEnabled) return;
 
         for (int i = 0; i < lines.size(); i++) {
             String line = lines.get(i);

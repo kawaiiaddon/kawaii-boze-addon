@@ -9,15 +9,22 @@ public class ActionBarCensor extends AddonModule {
     }
 
     String filter = "";
+    private boolean isModuleEnabled = false;
 
     public boolean shouldHide(String text) {
-        return text.contains(filter);
+        return isModuleEnabled && text.contains(filter);
     }
 
 
     @Override
+    public void onEnable() {
+        super.onEnable();
+        isModuleEnabled = true;
+    }
+
+    @Override
     public void onDisable() {
         super.onDisable();
-        return;
+        isModuleEnabled = false;
     }
 }

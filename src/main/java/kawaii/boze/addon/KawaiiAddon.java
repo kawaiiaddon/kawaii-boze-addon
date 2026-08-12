@@ -26,6 +26,7 @@ public class KawaiiAddon extends Addon {
 
     public static ActionBarCensor action;
     public static CoordSpoofer spoofer;
+    public static MapCensor mapCensor;
 
     @Override
     public boolean initialize() {
@@ -36,6 +37,8 @@ public class KawaiiAddon extends Addon {
         modules.add(action);
         spoofer = new CoordSpoofer();
         modules.add(spoofer);
+        mapCensor = new MapCensor();
+        modules.add(mapCensor);
 
         //commands
         dispatcher.registerCommand(new Cuddle());
