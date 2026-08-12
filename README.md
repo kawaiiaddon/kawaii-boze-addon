@@ -1,0 +1,1 @@
+# kawaii-boze-addon
