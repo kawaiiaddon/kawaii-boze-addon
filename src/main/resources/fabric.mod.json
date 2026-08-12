@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "kawaii-boze-addon",
+  "version": "${version}",
+  "name": "kawaii-boze-addon",
+  "description": "A Boze Client addon that displays catgirl images + more, adding some kawaii flair to your client!.",
+  "authors": [
+    "john220099",
+    "Turtlegamer_"
+  ],
+  "contact": {
+    "sources": "https://github.com/kawaiiaddon/",
+    "discord": "https://discord.gg/cuUbBurC54"
+  },
+  "environment": "client",
+  "mixins": [
+    "KawaiiBozeAddon.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "${minecraft_version}"
+  }
+}
