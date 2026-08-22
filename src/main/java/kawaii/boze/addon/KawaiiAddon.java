@@ -39,6 +39,7 @@ public class KawaiiAddon extends Addon {
         modules.add(spoofer);
         mapCensor = new MapCensor();
         modules.add(mapCensor);
+        modules.add(new CatFacts());
 
         //commands
         dispatcher.registerCommand(new Cuddle());
